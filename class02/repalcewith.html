@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepleceWith</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://picsum.photos/id/125/200/150" alt="">
+        <img src="https://picsum.photos/id/126/200/150" alt="">
+        <img src="https://picsum.photos/id/127/200/150" alt="">
+        <img src="https://picsum.photos/id/128/200/150" alt="">
+        <img src="https://picsum.photos/id/129/200/150" alt="">
+        <img src="https://picsum.photos/id/15/200/150" alt="">
+        <img src="https://picsum.photos/id/111/200/150" alt="">
+
+    </div>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("img").click(function () {
+           // let source=$(this).attr("src");
+            $(this).replaceWith("<img src='../assets/images/agent.jpg' width='300px'>");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

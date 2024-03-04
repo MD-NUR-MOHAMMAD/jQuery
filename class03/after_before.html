@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>after_before</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="state">tal Bangla</h1>
+        <div id="after">b</div>
+        <div id="before">c</div>
+        <hr>
+        <button id="btn">empty</button>
+
+    </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#after").after("<h3>Successfully added after</h3>");
+            $("#before").before("<h3>Successfully added before</h3> ");
+            $("#btn").click(function(){
+                 $(".container").empty();
+                // $(".container").remove();
+            });
+            $("<button>Click here</button>").insertBefore("#btn");
+            $("<button>Click here</button>").insertAfter("#btn");
+            $("#state").prepend("Digi");
+            $("#state").append("desh");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bind</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <button id="bBtn">bind</button>
+        <button id="ubtn">unbind</button>
+        <ul>
+            <li>Dhaka</li>
+            <li>Agargoan</li>
+            <li>Semoli</li>
+            <li>Mirpur</li>
+            <li>Uttra</li>
+        </ul>
+        <input type="text">
+        <button id="ub">Unbind</button>
+
+    </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input:text').bind({
+                focus: function(){
+                    $(this).val('ABC');
+                },
+                blur: function(){
+                $(this).val('Enter some text');
+                }
+            });
+            $("#ub").click(function(){
+                     $('input:text').unbind();
+            });
+            $("#ubtn").click(function(){
+                  $("li").unbind();
+            });
+            
+            $("#bBtn").click(function(){
+                $("li").bind("click",function(){
+                    $(this).css("background-color","aqua")
+                });
+            });
+        });
+    </script>
+</body>
+</html>

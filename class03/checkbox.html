@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <style type="text/css">
+        ul {
+            background-color: aqua;
+            list-style: none;
+            margin: 0pt;
+            padding: 0pt;
+            width: 500px;
+
+        }
+
+        li {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>
+                <input type="checkbox" id="handle">
+                <label for="handle"><strong>Toggle All</strong></label>
+            </li>
+            <li>
+                <input type="checkbox" class="toggle">
+                <label for="">A Study in Math</label>
+            </li>
+            <li>
+                <input type="checkbox" class="toggle">
+                <label for="">The sign of the four</label>
+            </li>
+            <li>
+                <input type="checkbox" class="toggle">
+                <label for="">The Adventurd of study</label>
+            </li>
+            <li>
+                <input type="checkbox" class="toggle">
+                <label for="">A Study in science</label>
+            </li>
+            <li>
+                <input type="checkbox" class="toggle">
+                <label for="">A Study in Bangla</label>
+            </li>
+            <li>
+                <input type="button" id="getvalue" value="Get Selected Values">
+            </li>
+            <li id="selected"></li>
+        </ul>
+
+    </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#handle").click(function () {
+                $(".toggle").prop("checked", $(this).prop("checked"));
+            });
+
+            $("#getvalue").click(function (e) {
+                $("#selected").html("<b>You selected:</b><br>");
+                if($(".toggle:checked").length){
+                    $(".toggle:checked").each(function(){
+                          $("#selected").append($(this).next("label"). html() + "<br>");
+                    });
+                }
+                else{
+                    $("#selected").append("Nothing");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
